@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    <link href ="styleformm.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="bg">
+    <div class="wrapper">
+<p>First Name : <span id="input1"></span> </p>
+<p>second Name : <span id="input2"></span> </p>
+<p>gender : <span id="input3"></span> </p>
+<p>Email: <span id="input4"></span> </p>
+<p>Password: <span id="input5"></span> </p>
+<p>Confirm password : <span id="input6"></span> </p>
+<p>Birthday : <span id="input7"></span> </p>
+<p>Adress: <span id="input8"></span> </p>
+
+</div>
+</div>
+
+</body>
+<script>
+    const input1 = document.getElementById("input1");
+    const name1 = localStorage.getItem("name1");
+    input1.textContent = name1;
+
+    const input2 = document.getElementById("input2");
+    const name2 = localStorage.getItem("name2");
+    input2.textContent = name2;
+
+    const input3 = document.getElementById("input3");
+    const gender = localStorage.getItem("gender");
+    input3.textContent = gender;
+
+    
+    const input4 = document.getElementById("input4");
+    const email = localStorage.getItem("email");
+    input4.textContent = email; 
+
+    const input5 = document.getElementById("input5");
+    const pass1 = localStorage.getItem("pass1");
+    input5.textContent = pass1;
+
+    const input6 = document.getElementById("input6");
+    const pass2 = localStorage.getItem("pass2");
+    input6.textContent = pass2;
+
+    const input7 = document.getElementById("input7");
+    const birth = localStorage.getItem("birth");
+    input7.textContent = birth;
+
+    const input8 = document.getElementById("input8");
+    const add = localStorage.getItem("add");
+    input8.textContent = add;
+
+
+
+</script>
+</html>

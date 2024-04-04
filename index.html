@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <link href ="styleform.css" rel="stylesheet"/>
+</head>
+<body>
+  
+    <div>
+ <div id="bg"></div>
+ <div class="wrapper">
+     
+   
+   <div class="f1" >
+     <h3 class="su">Sign Up</h3>
+    
+</div>
+<form id="form" onsubmit="submit" class="form">
+        
+    <span>
+      <label>First Name:</label>
+      <input type="text1" id="text1" placeholder="Enter your first name">
+    </span>
+
+    <span>
+       <label> Second Name:</label>
+       <input type="text2"  id="text2" placeholder="Enter your second name"><br><br>
+    </span>
+
+    <span>
+        <label>choose your gender:</label>
+
+        <select >
+            <option selected>gender</option>
+            <option>Female</option>
+            <option>male</option>
+          
+
+        </select>
+        <!-- <label>Female</label>
+        <input type="radio" name="gender" id="input3" >
+        <label >Male</label>
+        <input type="radio" name="gender" > -->
+     
+        </span>
+     <span>
+         <label>Enter your email</label>
+         <input type="email" placeholder="Enter your email"><br><br>
+     </span>
+
+   <span> 
+      <label for="password">Password:</label>
+      <input type="password" id="password"
+       placeholder="enter your password" >
+  
+         <label for="conf-pass"> Confirm your password:</label>
+         <input type="password" id="conf-pass" 
+         placeholder="Re-type your password" ><br><br>
+   </span>
+
+ 
+     <span>
+         <label> Birthday</label>
+         <input type="date">
+     </span>
+     <span>
+         <label>Adress</label>
+         <select>
+             <option selected>Adress</option>
+             <option>Zarqa</option>
+             <option>Amman</option>
+             <option>Irbid</option>
+
+         </select><br><br>
+        </span>
+
+    <div>
+     <input type="checkbox" id="check" class="check">
+     <label>I agree to the <a href="http://www.google.com">Terms of Use</a>
+         and <a href="http://www.google.com">Privacy Policy.</a></label>
+    </div>
+
+    <div>
+        <p id="mssg"></p>
+        <button type="submits" onclick="checkpassword()" 
+        value="SUBMIT">submit</button>
+        <a href="http://www.google.com">Learn More</a>
+    </div>
+ </form>
+
+</div>
+<script>
+
+function checkpassword(){
+    let password=document.getElementById
+    ("password").value;
+    let confpass=document.getElementById
+    ("conf-pass").value;
+    console.log(password,confpass); 
+     let message=document.getElementById
+     ("mssg");
+     if(password.length !=0){
+        if(password == confpass){
+            var checkedValue = null; 
+            var inputElements = document.getElementsByClassName('check');
+            for(var i=0; inputElements[i]; ++i){
+                if(inputElements[i].checked){
+                    checkedValue = inputElements[i].value;
+                    break;
+                }
+            }
+
+            if(checkedValue != null){
+                window.location.assign("/page11.html")
+            }else{
+                message.textContent="Confirm the checkbox";
+            }
+
+        } else{
+            message.textContent="passwords not match";
+        }
+     }else{
+        message.textContent="Please fill the password";
+     }
+}
+
+//     const text1=document.getElementById('text1');
+// const text2=document.getElementById('text2');
+// const submite=document.getElementById('sumbite');
+const formELement = document.getElementById("form");
+formELement.addEventListener("submit",(event)=>{
+    event.preventDefault();
+    console.log("Event submitted",event.target);
+    console.log("Event submitted",event.target[0].value);
+    localStorage.setItem("name1",event.target[0].value);
+
+
+    console.log("Event submitted",event.target);
+    console.log("Event submitted",event.target[1].value);
+    localStorage.setItem("name2",event.target[1].value);
+
+    console.log("Event submitted",event.target);
+    console.log("Event submitted",event.target[2].value);
+    localStorage.setItem("gender",event.target[2].value);
+
+    console.log("Event submitted",event.target);
+    console.log("Event submitted",event.target[3].value);
+    localStorage.setItem("email",event.target[3].value);
+
+    console.log("Event submitted",event.target);
+    console.log("Event submitted",event.target[4].value);
+    localStorage.setItem("pass1",event.target[4].value);
+
+    console.log("Event submitted",event.target);
+    console.log("Event submitted",event.target[5].value);
+    localStorage.setItem("pass2",event.target[5].value);
+
+    console.log("Event submitted",event.target);
+    console.log("Event submitted",event.target[6].value);
+    localStorage.setItem("birth",event.target[6].value);
+
+    console.log("Event submitted",event.target);
+    console.log("Event submitted",event.target[7].value);
+    localStorage.setItem("add",event.target[7].value);
+  
+ 
+}
+);
+// function submit(event){
+//     event.preventDefault();
+//     console.log("Event submitted",event);
+// //   submite.innerHTML= text1.value;
+// //   submite.innerHTML= text2.value;
+// //   submite.innerHTML=submite.value;
+
+// }
+// submite.accessKeyLabel('click',name);
+</script>
+</body>
+</html>

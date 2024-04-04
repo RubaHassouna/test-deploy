@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+</head>
+<body>
+<h2 id="o">welcome</h2>    
+</body>
+<script>
+    const o = document.getElementById("o");
+    const name = localStorage.getItem("name");
+    o.textContent = name;
+</script>
+</html>
